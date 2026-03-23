@@ -18,8 +18,14 @@ import {
 import { apiMethods } from '@/lib/api';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<any>(null);
+  const [isAppActive, setIsAppActive] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOutsideRDC, setIsOutsideRDC] = useState(false);
   const [isCheckingLocation, setIsCheckingLocation] = useState(true);
+  
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
