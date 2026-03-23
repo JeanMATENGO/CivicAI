@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { apiMethods } from '@/lib/api';
-import { MapPin, ShieldCheck, AlertTriangle, Info, Clock } from 'lucide-react';
+import { MapPin, ShieldCheck, AlertTriangle, Info, Clock, ArrowRight } from 'lucide-react';
 
 export default function DashboardPage() {
   const [user, setUser] = useState<any>(null);
@@ -90,10 +90,10 @@ export default function DashboardPage() {
           </div>
           <h3 className="font-bold text-gray-400 text-sm">Niveau de sécurité</h3>
           <p className="text-2xl font-black mt-1 text-gray-800 uppercase">Calme</p>
-          <p className="text-xs text-green-500 font-bold mt-2 flex items-center gap-1">
+          <div className="text-xs text-green-500 font-bold mt-2 flex items-center gap-1">
             <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></div>
             Aucun incident majeur
-          </p>
+          </div>
         </div>
 
         <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 group hover:border-yellow-200 transition-all">
@@ -103,9 +103,6 @@ export default function DashboardPage() {
           <h3 className="font-bold text-gray-400 text-sm">Alertes de zone</h3>
           <p className="text-2xl font-black mt-1 text-gray-800 uppercase">{incidents.length} Signalés</p>
           <p className="text-xs text-gray-500 mt-2">Dernières 24 heures</p>
-        </div>
-      </div>
-
         </div>
       </div>
 
